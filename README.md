@@ -17,6 +17,8 @@ To create a production build:
 npm run build
 ```
 
+To deploy the site on Render, follow [RenderREADME.md](RenderREADME.md). The repository also includes a `render.yaml` Blueprint for one-step service configuration.
+
 ## Website sections
 
 ### Video
