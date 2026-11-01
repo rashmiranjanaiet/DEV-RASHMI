@@ -5,6 +5,13 @@ const STAFF_PROJECT_LINKS = [
     { title: 'ML', url: 'https://lnkd.in/p/dK4QbxYd' },
 ];
 
+const MONETUNE_PROJECT_LINKS = [
+    { title: 'OPEN PROJECT 1', url: 'https://lnkd.in/p/dDs-iiUg' },
+    { title: 'OPEN PROJECT 2', url: 'https://lnkd.in/p/dD6ZGEnn' },
+    { title: 'OPEN PROJECT 3', url: 'https://two026-jal-suraksha-kavach-disease-o76n.onrender.com/#/' },
+    { title: 'OPEN PROJECT 4', url: 'https://lnkd.in/p/dN7dYAZJ' },
+];
+
 const TECH_STACK_LOGOS = [
     '/textures/gallery/javalogo.webp',
     '/textures/gallery/htmllogo.webp',
@@ -30,6 +37,29 @@ const getStableHash = value => {
 
 export function applyGalleryProjectOverrides(projects) {
     const overriddenProjects = projects.map(project => {
+        if (matchesProject(project, ['bio'])) {
+            return {
+                ...project,
+                url: 'https://github.com/rashmiranjanaiet?tab=repositories',
+                front: '/textures/gallery/bio-rashmi.webp',
+                painted: '/textures/gallery/bio-rashmi.webp',
+            };
+        }
+
+        if (matchesProject(project, ['timberkitty'])) {
+            return {
+                ...project,
+                url: 'https://free-game-x.onrender.com/',
+            };
+        }
+
+        if (matchesProject(project, ['monetune'])) {
+            return {
+                ...project,
+                quickLinks: MONETUNE_PROJECT_LINKS,
+            };
+        }
+
         if (matchesProject(project, ['67game', 'game67'])) {
             return {
                 ...project,
